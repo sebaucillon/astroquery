@@ -501,9 +501,12 @@ To obtain a list of the tables shared to a user type the following:
   tap_schema.columns
   tap_schema.schemas
   tap_schema.key_columns
-  gaiadr1.phot_variable_time_series_gfov
-  gaiadr1.ppmxl_neighbourhood
-  gaiadr1.gsc23_neighbourhood
+  #gaiadr1.phot_variable_time_series_gfov
+  gaidr2.phot_variable_time_series_gfov
+  #gaiadr1.ppmxl_neighbourhood
+  gaidr2.ppmxl_neighbourhood
+  #gaiadr1.gsc23_neighbourhood
+  gaidr2.gsc23_neighbourhood
   ...
   user_schema_1.table1
   user_schema_2.table1
