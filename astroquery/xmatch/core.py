@@ -2,7 +2,7 @@
 
 import six
 from astropy.io import ascii
-import astropy.units as units
+import astropy.units as u
 from astropy.table import Table
 
 from . import conf
@@ -85,12 +85,12 @@ class XMatchClass(BaseQuery):
         response : `~requests.Response`
             The HTTP response returned from the service.
         """
-        if max_distance > 180 * units.arcsec:
+        if max_distance > 180 * u.arcsec:
             raise ValueError(
                 'max_distance argument must not be greater than 180')
         payload = {
             'request': 'xmatch',
-            'distMaxArcsec': max_distance.to(units.arcsec).value,
+            'distMaxArcsec': max_distance.to(u.arcsec).value,
             'RESPONSEFORMAT': 'csv',
             **kwargs
         }
@@ -146,7 +146,7 @@ class XMatchClass(BaseQuery):
             cone_center = area.center
             payload['coneRA'] = cone_center.icrs.ra.deg
             payload['coneDec'] = cone_center.icrs.dec.deg
-            payload['coneRadiusDeg'] = area.radius.to_value(units.deg)
+            payload['coneRadiusDeg'] = area.radius.to_value(u.deg)
         else:
             raise ValueError('Unsupported area {}'.format(str(area)))
 
