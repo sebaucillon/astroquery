@@ -900,7 +900,7 @@ def _parse_dimension(dim):
         The value of the radius in arcminutes.
     """
     if (isinstance(dim, u.Quantity) and
-            dim.unit in i.deg.find_equivalent_units()):
+            dim.unit in u.deg.find_equivalent_units()):
         dim_in_min = dim.to(u.arcmin).value
     # otherwise must be an Angle or be specified in hours...
     else:
