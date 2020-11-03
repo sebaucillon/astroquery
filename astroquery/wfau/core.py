@@ -286,10 +286,10 @@ class BaseWFAUClass(QueryWithLogin):
         if verbose:
             print("Found {num} targets".format(num=len(image_urls)))
 
-        return [commons.FileContainer(Uobj, encoding='binary',
+        return [commons.FileContainer(url, encoding='binary',
                                       remote_timeout=self.TIMEOUT,
                                       show_progress=show_progress)
-                for Uobj in image_urls]
+                for url in image_urls]
 
     def get_image_list(self, coordinates, waveband='all', frame_type='stack',
                        image_width=1 * u.arcmin, image_height=None,
